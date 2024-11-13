@@ -1,5 +1,9 @@
-.carrinho {
-    
+/* 
+-------------ESTILOS DO CARRINHO DE COMPRAS ---------------------
+*/
+
+
+.carrinho {   
     padding: 1px;
     width: 100%;
     background-color: #696969;
@@ -10,44 +14,36 @@
     font-size: 0.9em;
     color: rgb(255, 255, 255);
 }
-
 .produtos {
     list-style-type: none;
     padding: 0; 
 }
-
 .produto {
-    display: flex;
-    
+    display: flex;   
     justify-content: space-between;
     padding: 1px 0;
     border-bottom: 1px solid #eee;
 }
-
 .nome {
     padding-left: 2px;
     text-align: left;
     margin-right: auto;
-    flex-grow: 1;
-    
+    flex-grow: 1;   
 }
-
 .preco,
 .quantidade,
 .remover {
 
     margin-left: 10px;
 }
-
 .produto:last-child {
     border-bottom: none; /* Remove a borda do último item */
 }
-
 .remover{
     background-color: #ff6b6b;
     color: #eee;
     border-radius: 5px;
-    background-image: url(img/bin.png);
+    background-image: url(../img/bin.png);
     background-size: cover;
 }
 .button {

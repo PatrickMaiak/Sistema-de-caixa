@@ -1,3 +1,11 @@
+
+
+
+/* 
+-------------ESTILOS DA GRADE POSIÇÃO E CORES DE FUNDO DO SISTEMA---------------------
+*/
+
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -15,7 +23,7 @@
     background-color: #292c35e8;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 150px 400px 70px;
+    grid-template-rows: 150px 450px 20px;
     grid-template-areas:
       "cabecalho cabecalho cabecalho cabecalho"
       "principal principal menu-lateral menu-lateral"
@@ -42,7 +50,6 @@
   }
   
   .item {
-    border: 1px solid #00f4bf;
     text-align: center;
     font-size: 1.25em;
     font-weight: normal;
