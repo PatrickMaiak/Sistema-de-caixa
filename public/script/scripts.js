@@ -4,8 +4,72 @@ const carrinhoDeProdutos = []
 
 
 adicionarAoCarrinho=(produtoId)=>{
-    console.log(produtoId);
+
+    const produtoEcontrado = listaProdutos.find(produto => produto.id === produtoId)
+
+    console.log(produtoEcontrado);
+    listarNoCarrinho(produtoEcontrado.descricao,produtoEcontrado.valor);
 };
+
+
+
+function listarNoCarrinho(descricao,valor ) {
+
+    const liDocarrinho = document.createElement('li')
+    liDocarrinho.classList.add('produto')
+
+    const spanDoNomeNocarrinho = document.createElement('span')
+    spanDoNomeNocarrinho.classList.add('nome')
+    spanDoNomeNocarrinho.textContent = descricao
+
+    const spanDoPrecoNocarrinho = document.createElement('span')
+    spanDoPrecoNocarrinho.classList.add('preco')
+    spanDoPrecoNocarrinho.textContent = `R$ ${valor.toFixed(2)}`
+
+
+
+
+   
+
+    const spanQuantidade = document.createElement('span');
+    spanQuantidade.classList.add('quantidade');
+    spanQuantidade.textContent = `1`;
+
+ 
+    const buttonRemover = document.createElement('button');
+    buttonRemover.classList.add('remover', 'botaoRemoverCarrinho');
+    // buttonRemover.textContent = 'Remover';
+
+    liDocarrinho.appendChild(spanDoNomeNocarrinho);
+    liDocarrinho.appendChild(spanDoPrecoNocarrinho);
+    liDocarrinho.appendChild(spanQuantidade);
+    liDocarrinho.appendChild(buttonRemover);
+
+    document.querySelector('.produtos').appendChild(liDocarrinho);
+
+   
+
+    // console.log();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -34,7 +98,7 @@ function adicionarProduto(id, categoria, descricao, valor, quantidade, desconto 
         status
     };
     listaProdutos.push(novoProduto);
-    console.log("Produto adicionado:", novoProduto);
+    // console.log("Produto adicionado:", novoProduto);
 }
 function removerProduto(id) {
     const index = listaProdutos.findIndex(produto => produto.id === id);
@@ -118,6 +182,6 @@ exibirProdutos();
 
 // removerProduto(2)
 
-console.log(listaProdutos);
+// console.log(listaProdutos);
 
 

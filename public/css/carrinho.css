@@ -3,7 +3,9 @@
 */
 
 
-.carrinho {   
+.carrinho {  
+    display: flex;
+    flex-direction: column-reverse; 
     padding: 1px;
     width: 100%;
     background-color: #696969;
