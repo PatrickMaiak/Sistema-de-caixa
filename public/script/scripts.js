@@ -1,3 +1,65 @@
+const categorias = [];
+
+criarCategorias(1,"frios")
+criarCategorias(2,"bebidas")
+criarCategorias(3,"graos")
+criarCategorias(4,"carnes")
+criarCategorias(5,"agropecuaria")
+criarCategorias(6,"temperos")
+criarCategorias(7,"agropecuaria")
+criarCategorias(8,"temperos")
+criarCategorias(9,"agropecuaria")
+criarCategorias(10,"temperos")
+criarCategorias(11,"agropecuaria")
+criarCategorias(12,"temperos")
+
+
+listaCategorias();
+
+
+function criarCategorias(id,categoria){
+    const novaCategoria = 
+        {
+            id,
+            categoria 
+
+        }
+    categorias.push(novaCategoria);
+    // console.log(categorias)
+};
+
+function listaCategorias(){
+    categorias.forEach(categoria =>{
+            const botao = document.createElement("button");
+            botao.classList.add("botaoDaCategoria");
+            botao.textContent= categoria.categoria;
+
+            const listaDeCategoria = document.getElementsByClassName("listaDeCategoria")[0];
+            listaDeCategoria.appendChild(botao);
+        }
+    )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 const carrinhoDeProdutos = []
