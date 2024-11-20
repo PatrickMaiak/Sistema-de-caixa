@@ -42,29 +42,6 @@ function listaCategorias(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const carrinhoDeProdutos = []
-
-
 adicionarAoCarrinho=(produtoId)=>{
 
     const produtoEcontrado = listaProdutos.find(produto => produto.id === produtoId)
@@ -110,31 +87,24 @@ function listarNoCarrinho(descricao,valor ) {
     document.querySelector('.produtos').appendChild(liDocarrinho);
 
    
-
+    somarValorTotal(valor);
     // console.log();
 }
 
 
+var carrinhoDeProdutos = 0.00
 
+function somarValorTotal(valor){
+    carrinhoDeProdutos += valor;
 
+    const valorTotal = document.getElementsByClassName("valor-total")[0];
 
+    
 
+  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    valorTotal.textContent = "   R$: " + carrinhoDeProdutos.toFixed(2)
+}
 
 
 const listaProdutos= [
@@ -200,7 +170,9 @@ function exibirProdutos() {
         listaDeProdutosContainer.appendChild(botaoProduto);
     });
 }
-adicionarProduto(2, "bebida", "Coca-Cola 2L", 8.00, 30, 0, "disponível");
+
+
+
 adicionarProduto(3, "bebida", "Pepsi 2L", 7.50, 25, 0, "disponível");
 adicionarProduto(4, "cafe", "Café Pilão 500g", 15.00, 20, 0, "disponível");
 adicionarProduto(5, "cafe", "Café Melitta 500g", 14.50, 15, 0, "disponível");

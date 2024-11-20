@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de caixa</title>
+    <link rel="stylesheet" href="public/css/estilos.css">
+    <link rel="stylesheet" href="public/css/componentesEstilizados.css">
+    <link rel="stylesheet" href="public/css/carrinho.css">
+    <link rel="stylesheet" href="public/css/categoriaProduto.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="item cabecalho">
+            <h1>SISTEMA DE CAIXA</h1>
+            <button class="boataoDeAbasDeFunçoes">PRINCIPAL</button>
+            <button class="boataoDeAbasDeFunçoes">ESTATISTICAS</button>
+            <button class="boataoDeAbasDeFunçoes">HISTORICO</button>
+            <button class="boataoDeAbasDeFunçoes">OPÇOES CATEGORIAS</button>
+            <button class="boataoDeAbasDeFunçoes">OPÇOES PRODUTOS</button>
+        </div>
+        
+        <div class=" principal">
+            <p>Carrinho de Compras<p>
+            <div class="carrinho">
+                <ul class="produtos"></ul>
+            </div>
+            <div class="total">
+                <strong>Total:</strong> <span class="valor-total"></span>
+            </div>
+
+        </div>
+        <div class="item menu-lateral menuDeProdutos">
+            <div class="listaDeCategoria"></div>
+            
+            <div class="listaDeProdutos"></div>
+            <div id="paginationControls" class="paginationControls divDePaginacao">
+                <button class="botaoDePaginacao" onclick="changePage(-1)"><</button>
+                <span id="pageInfo">Página 1</span>
+                <button class="botaoDePaginacao" onclick="changePage(1)">></button>
+            </div>
+            
+        </div>
+        <div class="item rodape"></div>
+      </div>
+
+  
+      <script src="public/script/scripts.js"></script>
+      <script src="public/script/paginação.js"></script>
+      
+</body>
+</html>

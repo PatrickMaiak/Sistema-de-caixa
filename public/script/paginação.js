@@ -36,3 +36,5 @@ function changePage(direction) {
 changePage(-1);
 // renderProdutos();
 showPage(1);
+
+adicionarProduto(2, "bebida", "Coca-Cola 2L", 8.55, 30, 0, "disponível");
