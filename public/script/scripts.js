@@ -40,19 +40,21 @@ function listaCategorias(){
     )
 }
 
-
+// var produtosAdicionadosNocarrinho = [];
 
 adicionarAoCarrinho=(produtoId)=>{
 
     const produtoEcontrado = listaProdutos.find(produto => produto.id === produtoId)
 
-    console.log(produtoEcontrado);
-    listarNoCarrinho(produtoEcontrado.descricao,produtoEcontrado.valor);
+    // produtosAdicionadosNocarrinho.push(produtoEcontrado);
+    // console.log(produtosAdicionadosNocarrinho)
+    
+    
+    listarNoCarrinho(produtoEcontrado.id,produtoEcontrado.descricao,produtoEcontrado.valor);
 };
 
 
-
-function listarNoCarrinho(descricao,valor ) {
+function listarNoCarrinho(id,descricao,valor ) {
 
     const liDocarrinho = document.createElement('li')
     liDocarrinho.classList.add('produto')
@@ -63,6 +65,7 @@ function listarNoCarrinho(descricao,valor ) {
 
     const spanDoPrecoNocarrinho = document.createElement('span')
     spanDoPrecoNocarrinho.classList.add('preco')
+    console.log(valor)
     spanDoPrecoNocarrinho.textContent = `R$ ${valor.toFixed(2)}`
 
 
@@ -77,7 +80,13 @@ function listarNoCarrinho(descricao,valor ) {
  
     const buttonRemover = document.createElement('button');
     buttonRemover.classList.add('remover', 'botaoRemoverCarrinho');
-    // buttonRemover.textContent = 'Remover';
+
+    liDocarrinho.id = id;
+
+
+
+
+    buttonRemover.addEventListener('click',() => deletarItemCarrinho(id,liDocarrinho,valor ))
 
     liDocarrinho.appendChild(spanDoNomeNocarrinho);
     liDocarrinho.appendChild(spanDoPrecoNocarrinho);
@@ -91,17 +100,31 @@ function listarNoCarrinho(descricao,valor ) {
     // console.log();
 }
 
+function deletarItemCarrinho(id,liDocarrinho,valor) {
+   
+    console.log(id)
 
-var carrinhoDeProdutos = 0.00
+    liDocarrinho.remove();
+
+    subtrairValorTotal(valor);
+
+}
+
+//------------------total do carrinho--------------------------
+var carrinhoDeProdutos = 0
+
+function subtrairValorTotal(valor){
+    carrinhoDeProdutos = (carrinhoDeProdutos - valor);
+
+    const valorTotal = document.getElementsByClassName("valor-total")[0];
+
+    valorTotal.textContent = "   R$: " + carrinhoDeProdutos.toFixed(2)
+}
 
 function somarValorTotal(valor){
     carrinhoDeProdutos += valor;
 
     const valorTotal = document.getElementsByClassName("valor-total")[0];
-
-    
-
-  
 
     valorTotal.textContent = "   R$: " + carrinhoDeProdutos.toFixed(2)
 }
@@ -170,6 +193,23 @@ function exibirProdutos() {
         listaDeProdutosContainer.appendChild(botaoProduto);
     });
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//------------------------------------carga de dados--------------------------------------------------------
 
 
 
